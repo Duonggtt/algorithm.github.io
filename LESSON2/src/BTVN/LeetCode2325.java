@@ -20,7 +20,6 @@ public class LeetCode2325 {
                 }
                 i++;
             }
-            System.out.println(map);
             for(int j =0;j<message.length();j++) {
                 if(message.charAt(j) == ' ') {
                     sb.append(" ");
