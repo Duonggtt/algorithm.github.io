@@ -8,17 +8,17 @@ import java.util.Map;
 public class test {
 
     public static void main(String[] args) {
-        int[] nums = {3,5,4,2,4,6}; //8
-        Arrays.sort(nums);
-        int max = 0;
-        for(int i = 0;i< nums.length / 2;i++) {
-            int sum = 0;
-            sum += (nums[i] + nums[nums.length - 1 - i]);
-            if(sum >= max) {
-                max = sum;
+        int[] piles = {9,8,7,6,5,1,2,3,4}; //8
+        Arrays.sort(piles);
+        int result = 0;
+        for(int i = 0;i<piles.length;i+=2) {
+            while(i >= 1) {
+                result += piles[piles.length - 2 - i];
+                System.out.println(result);
+                break;
             }
         }
-        System.out.println(max);
+        System.out.println(result - piles[0]);
     }
 
 }
