@@ -4,9 +4,11 @@ public class test {
 
     public static void main(String[] args) {
 
-        char[] s = {'h','e','l','l','o'};
-        reverseString(s);
+//        char[] s = {'h','e','l','l','o'};
+//        reverseString(s);
 
+        int n = 20;
+        System.out.println(isPowerOfTwo(n));;
     }
 
     public static int GiaiThua(int n) {
@@ -25,7 +27,17 @@ public class test {
     }
 
 
-
+    public static boolean isPowerOfTwo(int n) {
+        if(n % 2 == 0 && n > 0) {
+            n /= 2;
+        }else {
+            return false;
+        }
+        if(n == 1) {
+            return true;
+        }
+        return isPowerOfTwo(n);
+    }
 
 
     public static void reverseString(char[] s) {
