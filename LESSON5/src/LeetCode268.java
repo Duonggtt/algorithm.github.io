@@ -18,7 +18,7 @@ public class LeetCode268 {
                     end = mid;
                 }
             }
-            return end;     
+            return end;
         }
     }
 
