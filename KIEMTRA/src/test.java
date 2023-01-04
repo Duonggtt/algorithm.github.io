@@ -3,8 +3,8 @@ import java.util.*;
 public class test {
 
     public static void main(String[] args) {
-        int[] nums1 = {1,2,3};
-        int[] nums2 = {2,4,6};
+        int[] nums1 = {1,2,3,3};
+        int[] nums2 = {1,1,2,2};
         System.out.println(findDifference(nums1, nums2));
     }
 
@@ -33,21 +33,32 @@ public class test {
     }
 
     public static List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
-        ArrayList<Integer> answer = new ArrayList<>();
+        List<List<Integer>> answer = new ArrayList<List<Integer>>();
+        List<Integer> list = new ArrayList<>();
+        List<Integer> result1 = new ArrayList<>();
+        List<Integer> result2 = new ArrayList<>();
+        for(int num : nums2) {
+            if(!list.contains(num)) {
+                list.add(num);
+            }
+            if(!result2.contains(num)) {
+                result2.add(num);
+            }
+        }
         for(int i =0;i<nums1.length;i++) {
-            for(int j = 0;j<nums2.length;j++) {
-                if(nums1[i] != nums2[j]) {
-                    if(!answer.contains(nums1[i])) {
-                        answer.add(nums1[i]);
-                        break;
-                    }
-                }else {
-                    break;
+            if(!list.contains(nums1[i])) {
+                if(!result1.contains(nums1[i])) {
+                    result1.add(nums1[i]);
+                }
+            }else {
+                if(result2.size() > 0) {
+                    result2.remove(result2.indexOf(nums1[i]));
                 }
             }
         }
-        System.out.println(Collections.singletonList(answer));
-        return Collections.singletonList(answer);
+        answer.add(result1);
+        answer.add(result2);
+        return answer;
     }
 
 
