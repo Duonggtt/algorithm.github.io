@@ -29,7 +29,7 @@ public class MergaSort {
         for(int i =0;i<aLength;i++) {
             a[i] = c[start + i];
         }
-        for(int i =0;i<aLength;i++) {
+        for(int i =0;i<bLength;i++) {
             b[i] = c[mid + 1 + i];
         }
 
