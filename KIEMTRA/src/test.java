@@ -47,7 +47,7 @@ public class test {
             }
         }
         System.out.println(Collections.singletonList(answer));
-        return new ArrayList<>(ArrayList<>(answer)) ;
+        return Collections.singletonList(answer);
     }
 
 
